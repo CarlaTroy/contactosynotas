@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% if contact %}
+<form action="../registerApuntesFirst/{{contact.cedula}}" method="POST">{% csrf_token %}
+       
+    <button type="button" class="btn btn-default">ir</button>
+    </form> 
+
+{% endif %}

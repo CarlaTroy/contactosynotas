@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block title %}
+ <center><h1>Contactos</h1></center>
+{% endblock %}
+
+{% block extra_head %}
+    <style type="text/css">
+        body{
+            padding-top: 50px;
+        }
+        .start-template{
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+{% endblock extra_head %}
+
+{% block container %}
+  <div class="container">
+    <div class="start-template">
+      <table class="table table-responsive table-bordered">
+          <thead>
+            <tr>
+              <th class= "text-center">Nombres</th>
+              <th class= "text-center">Apellidos</th>
+              <th class= "text-center">Cedula</th>
+              <th class= "text-center">Celular</th>
+              <th class= "text-center">Email</th>
+              <th class= "text-center" colspan="3" >Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for contacto in contacto %}
+            <tr>
+                <td>{{contacto.nombres}}</td>
+                <td>{{contacto.apellidos}}</td>
+                <td>{{contacto.cedula}}</td> 
+                <td>{{contacto.celular}}</td>
+                <td>{{contacto.email}}</td>
+                <td><a href = "../seeApuntes/{{contacto.id}}" class="btn btn-info">Ver Notas</a></td>
+                <td><a href = "../updateContact/{{contacto.cedula}}" class="btn btn-info">Editar</a></td>
+                <td><a href = "../deleteContact/{{contacto.cedula}}" class="btn btn-danger">Eliminar</a></td>     
+            </tr>
+            {% endfor %}
+        </tbody>
+       </table>
+       <div class="btn-group"   >
+        <a class="btn btn-default" href="../registrarContacto/" role="button">Registrar Nuevo Contacto</a>
+        <a class="btn btn-default" role="button" href="../" >Inicio</a>
+      </div>
+    </div>
+  </div>
+{% endblock container %}
+

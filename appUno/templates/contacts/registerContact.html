@@ -1,0 +1,27 @@
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <title>Registro de Contacto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   
+</header>
+<div class="card col-4" style=" margin-left: auto; margin-right: auto; border-color: rgba(0, 183, 255, 0.904);  ">
+ 
+<h3 style="text-align:center ;">Registrar Contacto</h3>
+<form method="post" class="" action="" style="text-align-last: center; margin-left: 20% ; margin-right: 10%; width: 100px;box-sizing: border-box;"> {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit"  class="btn btn-success btn-block" value = "Aceptar"  >
+    	
+    <a href="/" type="button" class="btn btn-danger btn-block">Regresar</button>
+
+    <!-- <a href="/contact/ " type="button" class="btn btn-success btn-block">Register Now</button> -->
+</form>
+</div>
+{% endblock %}
